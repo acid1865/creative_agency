@@ -1,0 +1,115 @@
+.contacts {
+	position: relative;
+	overflow: hidden;
+	padding: 150px 0 100px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+	@include media-breakpoint-down(mobile-max) {
+		padding: 50px 0;
+	}
+
+	&__fields {
+		display: flex;
+		justify-content: space-between;
+
+		@include media-breakpoint-down(mobile-max) {
+			display: block;
+		}
+
+		&_input {
+			display: block;
+			width: 320px;
+			height: 48px;
+			padding: 0 20px;
+		}
+	}
+
+	&__comment {
+		margin-top: 30px;
+
+		textarea {
+			display: block;
+			padding: 20px;
+			width: 100%;
+			height: 270px;
+			resize: none;
+			overflow: auto;
+		}
+	}
+
+	&__form {
+		margin-top: 150px;
+
+		@include media-breakpoint-down(mobile-max) {
+			margin-top: 50px;
+		}
+	}
+}
+
+.form {
+	text-align: center;
+
+	&__field {
+		background-color: $violet-2;
+		border: 1px solid rgba($color: $beige, $alpha: 0.3);
+		color: $beige;
+		font-size: 15px;
+		font-weight: normal;
+		outline: none;
+		transition: 0.5s ease border-color 0s,
+			0.3s ease 0s box-shadow;
+
+		@include media-breakpoint-down(tablet-max) {
+			width: 25%;
+		}
+
+		@include media-breakpoint-down(mobile-max) {
+			width: 100%;
+			margin-top: 15px;
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+
+		&.error {
+			border: 1px solid rgba($color: #FF0800, $alpha: 0.5);
+
+			@include hover() {
+				box-shadow: none;
+			}
+
+			&:focus {
+				box-shadow: none;
+			}
+		}
+
+		&::placeholder {
+			color: $beige;
+			opacity: 1;
+			font-size: 15px;
+		}
+
+		&:focus {
+			box-shadow: 0 0 4px 0 $beige;
+		}
+
+		@include hover() {
+			box-shadow: 0 0 4px 0 $beige;
+		}
+	}
+
+	.button {
+		color: $beige;
+		font-size: 16px;
+		transition: 0.3s ease border 0s, 0.3s ease background-color 0s, 0.3s ease color 0s;
+
+		&.success-form {
+			background-color: #59D979;
+			color: #000000;
+			text-shadow: none;
+		}
+	}
+}

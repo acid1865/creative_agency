@@ -1,0 +1,39 @@
+.allow-cookies {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	color: $beige;
+	z-index: 9;
+	transform: translateY(100%);
+	@include transition(transform);
+
+	&.never-visited {
+		transform: translateY(0);
+	}
+
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		padding: 10px 20px;
+		background-color: #705096;
+		border-radius: 5px 5px 0 0;
+
+		@include media-breakpoint-down(tablet-max) {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+
+	.button {
+		margin-top: 0;
+		color: $beige;
+		font-size: 16px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		
+		@include media-breakpoint-down(tablet-max) {
+			margin-top: 15px;
+		}
+	}
+}

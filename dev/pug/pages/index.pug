@@ -1,0 +1,27 @@
+include ../functions/_mixins.pug
+
+<!DOCTYPE html>
+html(lang="ru")
+		head
+				meta(charset="UTF-8")
+				meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes")
+				meta(http-equiv="X-UA-Compatible", content="ie=11")
+				title Template
+				include ../functions/_styles.pug
+		body
+				include ../functions/_svg.pug
+		
+				.wrapper 
+					.introducing(style="background-image: url(assets/images/PAGES/index/introduction.png)")
+						include ../../components/template/header/header.pug
+						include ../../components/index/intro/intro.pug
+					include ../../components/index/about/about.pug
+					include ../../components/index/skills/skills.pug
+					include ../../components/index/works/works.pug
+					include ../../components/index/process/process.pug
+					include ../../components/index/customers/customers.pug
+					include ../../components/index/contacts/contacts.pug
+					include ../../components/template/footer/footer.pug
+					include ../../components/template/cookies/cookies.pug        
+		
+				include ../functions/_scripts.pug

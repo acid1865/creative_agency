@@ -1,0 +1,98 @@
+.intro {
+	padding-top: 310px;
+	color: $beige;
+
+	@include media-breakpoint-down(tablet) {
+		padding-top: 250px;
+	}
+
+	@include media-breakpoint-down(mobile-max) {
+		padding-top: 200px;
+	}
+
+	&__heading {
+		font-size: 80px;
+		margin-bottom: 50px;
+
+		@include media-breakpoint-down(mobile-max) {
+			font-size: 48px;
+		}
+
+		@include media-breakpoint-down(mobile) {
+			font-size: 32px;
+		}
+
+		&_el {
+			display: block;
+			text-transform: uppercase;
+			font-weight: normal;
+			letter-spacing: 10px;
+			@include transition(letter-spacing);
+
+			@include media-breakpoint-down(tablet) {
+				letter-spacing: 0;
+			}
+
+			&--bold {
+				font-size: 70px;
+				font-weight: 600;
+
+				@include media-breakpoint-down(mobile-max) {
+					font-size: 35px;
+				}
+
+				@include media-breakpoint-down(mobile) {
+					font-size: 30px;
+				}
+			}
+
+			&--pink {
+				color: $pinky;
+			}
+
+			&:first-child {
+				line-height: 75px;
+
+				@include media-breakpoint-down(mobile-max) {
+					line-height: 60px;
+				}
+
+				@include media-breakpoint-down(mobile) {
+					line-height: 48px;
+				}
+			}
+		}
+	}
+
+	&__subtitle {
+		max-width: 500px;
+		color: $violet-3;
+		line-height: 24px;
+	}
+}
+
+.introducing {
+	width: 1600px;
+	margin: 0 auto;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding-bottom: 270px;
+
+	@media (max-width: 1599px) {
+		width: 100%;
+	}
+
+	@include media-breakpoint-down(tablet) {
+		padding-bottom: 150px;
+	}
+
+	@include media-breakpoint-down(mobile-max) {
+		padding-bottom: 70px;
+		background-position: center right;
+	}
+
+	@include media-breakpoint-down(mobile) {
+		background-position: 75%;
+	}
+}

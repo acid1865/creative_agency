@@ -1,0 +1,24 @@
+@import "_vars";
+@import "_func";
+@import "_fonts";
+@import "_reset";
+@import "_sprite";
+
+/**
+ * Main Styles
+ */
+@import "_global";
+@import "_ui";
+
+// Template
+@import "../components/template/header/header";
+@import "../components/template/footer/footer";
+@import "../components/template/cookies/cookies";
+// Index page
+@import "../components/index/intro/intro";
+@import "../components/index/about/about.scss";
+@import "../components/index/skills/skills";
+@import "../components/index/works/works";
+@import "../components/index/process/process";
+@import "../components/index/customers/customers";
+@import "../components/index/contacts/contacts";

@@ -1,0 +1,71 @@
+.button {
+	cursor: pointer;
+	display: inline-block;
+	text-transform: uppercase;
+	text-align: center;
+	border-radius: 5px;
+
+	&--pink {
+		background-color: $pinky;
+		letter-spacing: 1px;
+		min-width: 180px;
+		padding: 15px;
+		margin-top: 60px;
+		border: 1px solid transparent;
+		transition: 0.3s ease 0s color, 
+			0.3s ease 0s background-color,
+			0.3s ease 0s text-shadow,
+			0.3s ease 0s border-color;
+
+		@include hover() {
+			color: $beige;
+			background-color: transparent;
+			border-color: $beige;
+			text-shadow: 0  0 5px $pinky;
+		}
+	}
+
+	&--transparent {
+		color: $beige;
+		border: 1px solid $beige;
+	}
+}
+
+.section {
+
+	&__heading {
+		position: relative;
+		letter-spacing: 5px;
+		text-transform: uppercase;
+		text-align: center;
+		color: $beige;
+		font-weight: 600;
+		font-size: 38px;
+
+		&::after {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 50px;
+			height: 2px;
+			bottom: -15px;
+			background-color: $beige;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	&__description {
+		width: 525px;
+		margin: 0 auto;
+		text-align: center;
+		margin-top: 30px;
+		color: $violet-4;
+		font-size: 16px;
+		line-height: 24px;
+
+		@include media-breakpoint-down(mobile-max) {
+			width: 100%;
+		}
+	}
+}

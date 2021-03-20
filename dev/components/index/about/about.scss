@@ -1,0 +1,182 @@
+.about {
+	margin-bottom: 150px;
+
+	@include media-breakpoint-down(tablet) {
+		margin-bottom: 120px;
+	}
+
+	&__inner {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		margin-top: 70px;
+		color: $beige;
+
+		@include media-breakpoint-down(tablet) {
+			display: block;
+			margin-top: 50px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 35px;
+		letter-spacing: 4px;
+		text-transform: uppercase;
+		font-size: 38px;
+		line-height: 48px;
+
+		@include media-breakpoint-down(tablet) {
+			margin-bottom: 20px;
+			font-size: 28px;
+			line-height: 32px;
+			text-align: center;
+		}
+	}
+
+	&__text {
+		color: $violet-4;
+		font-size: 16px;
+	}
+
+	&__slider {
+		overflow: visible;
+		margin-bottom: 20px;
+
+		@include media-breakpoint-down(mobile-max) {
+			margin-bottom: 54px;
+		}
+
+		&:last-child {
+			@include media-breakpoint-down(mobile-max) {
+				margin-bottom: 32px;
+			}
+		}
+
+		&_description {
+			display: block;
+			margin-top: 15px;
+			text-align: center;
+		}
+
+		&_item {
+			@include transition(opacity);
+
+			@include media-breakpoint-down(tablet-max) {
+				height: auto;
+				display: flex;
+				flex-direction: column;
+			}
+
+			&:not(.swiper-slide-active) {
+				opacity: 0.6;
+			}
+		}
+
+		&_img {
+			max-height: 100%;
+			width: 100%;
+		}
+	}
+}
+
+.swiper-prev,
+.swiper-next {
+	display: inline-block;
+	position: absolute;
+	bottom: -100px;
+	padding: 5px;
+	cursor: pointer;
+	background-color: transparent;
+	border-radius: 10px;
+	@include transition(background-color);
+	border-radius: 5px;
+
+	@include hover() {
+		background-color: $beige;
+
+		.arrow {
+			fill: #000000;
+		}
+	}
+
+	.arrow {
+		width: 40px;
+		height: 35px;
+		fill: $beige;
+		@include transition(fill);
+	}
+}
+
+.swiper-next {
+	left: 65px;
+}
+.swiper-prev {
+	left: 0;
+
+	.arrow {
+		transform: rotate(-180deg);
+	}
+}
+.swiper-pagination {
+	bottom: -40px !important;
+}
+.swiper-pagination-bullet {
+	background-color: $pinky;
+}
+.swiper-pagination-bullet-active {
+	background-color: $pinky;
+	box-shadow: 0 0 0 2px #2D1948, 0 0 0 3px $pinky;
+}
+
+.blur-image {
+	img {
+		display: block;
+		width: auto;
+		max-width: 100%;
+		height: auto;
+		margin: 0 auto;
+		position: relative;
+		z-index: 2;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 500px;
+		position: relative;
+
+		@include media-breakpoint-down(tablet-max) {
+			height: auto;
+			flex-grow: 1;
+		}
+
+		@include media-breakpoint-down(mobile-max) {
+			height: 200px;
+		}
+	}
+
+	.about__slider_bg {
+		overflow: hidden;
+		position: absolute;
+		right: 0;
+		left: 0;
+		top: 0;
+		bottom: 0;
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: -15px;
+			right: -15px;
+			bottom: -15px;
+			left: -15px;
+			background-image: inherit;
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-position: center;
+			filter: blur(5px);
+		}
+	}
+}

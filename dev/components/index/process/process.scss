@@ -1,0 +1,63 @@
+.process {
+	padding: 110px 0 50px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	@include media-breakpoint-down(tablet) {
+		padding-top: 100px;
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -20px;
+		margin-top: 100px;
+	}
+
+	&__item {
+		display: flex;
+		margin: 0 20px;
+		width: calc(33.33333% - 40px);
+		margin-bottom: 60px;
+
+		@include media-breakpoint-down(tablet) {
+			width: calc(50% - 40px);
+		}
+
+		@include media-breakpoint-down(mobile-max) {
+			width: calc(100% - 40px);
+			justify-content: space-between;
+			margin-bottom: 30px;
+		}
+
+		&_content {
+			flex-shrink: 0;
+		}
+
+		.diamond {
+			position: relative;
+			flex-shrink: 0;
+			width: 40px;
+			height: 40px;
+			top: 5px;
+			margin-left: 20px;
+		}
+
+		&_title {
+			color: $beige;
+			font-weight: 600;
+			letter-spacing: 2px;
+			font-size: 16px;
+			line-height: 30px;
+			text-transform: uppercase;
+		}
+
+		&_text {
+			color: $violet-4;
+			font-size: 16px;
+			line-height: 24px;
+			max-width: 230px;
+		}
+	}
+}

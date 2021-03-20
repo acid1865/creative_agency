@@ -1,0 +1,11 @@
+section.contacts.section.parallax-image(style="background-image: url('assets/images/PAGES/index/contacts-bg.webp')")
+	.container
+		h2.section__heading Contact us
+		form(action="/")#contacts-form.contacts__form.form.js-contact-form
+			.contacts__fields
+				input(type="text" placeholder="Your Title" ).contacts__fields_input.form__field.js-title
+				input(type="text" placeholder="Your Name" ).contacts__fields_input.form__field.js-name
+				input(type="text" placeholder="Your Email" ).contacts__fields_input.form__field.js-email
+			.contacts__comment
+				textarea(name="" placeholder="Your Comment" ).contacts__comment_field.form__field.js-comment
+			button(type="submit").js-submit-button.button.button--pink Send message

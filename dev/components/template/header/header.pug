@@ -1,0 +1,20 @@
+header.header
+	.container
+		.header__wrapper
+			.header__logo
+				+svg('logo') 
+				a(href="/") Template Free
+			nav.header__nav
+				ul.header__nav_list
+					li.header__nav_item.header__nav_item--active
+						a(href="") Home
+					li.header__nav_item
+						a(href="/works.html") Works
+					li.header__nav_item
+						a(href="") Services
+					li.header__nav_item
+						a(href="") Testimonials
+					li.header__nav_item
+						a(href="") Contact
+			button.burger.js-burger
+				span

@@ -1,0 +1,169 @@
+.works {
+	padding-top: 150px;
+	padding-bottom: 150px;
+	transform: translateZ(0);
+
+	@include media-breakpoint-down(tablet) {
+		padding: 100px 0;
+	}
+
+	@include media-breakpoint-down(mobile-max) {
+		padding: 50px 0;
+	}
+
+	.section__description {
+		margin-bottom: 128px;
+
+		@include media-breakpoint-down(mobile-max) {
+			margin-bottom: 80px;
+		}
+	}
+
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		width: 1600px;
+		margin: 0 auto;
+
+		@media (max-width: 1599px) {
+			width: 100%;
+		}
+	}
+
+	&__item {
+		display: block;
+		flex-shrink: 0;
+		width: 25%;
+		position: relative;
+		transform: translate3d(0, 0, 0);
+		cursor: pointer;
+
+		@include media-breakpoint-down(mobile-max) {
+			width: 50%;
+		}
+
+		@include hover() {
+			.touch {
+				opacity: 1;
+			}
+		}
+
+		&_description {
+			margin-top: 20px;
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: bold;
+
+			@include media-breakpoint-down(tablet) {
+				font-size: 12px;
+				font-weight: normal;
+			}
+		}
+
+		&_front,
+		&_back {
+			user-select: none;
+			transition-timing-function: ease;
+			transition-duration: 0.3s;
+			transition-property: transform, opacity;
+		}
+
+		&_front {
+			transform: rotateY(0deg);
+			height: 100%;
+		}
+
+		&_back {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			position: absolute;
+			opacity: 0;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			background-color: #FFE7E8;
+			transform: rotateY(-180deg);
+		}
+
+		&.flipped {
+
+			.works__item_front {
+				transform: rotateY(180deg);
+			}
+
+			.works__item_back {
+				opacity: 1;
+				transform: rotateY(0deg);
+			}
+		}
+
+		&--vertical-flip {
+
+			.works__item_back {
+				transform: rotateX(-180deg);
+			}
+
+			&.flipped {
+
+				.works__item_front {
+					transform: rotateX(180deg);
+				}
+
+				.works__item_back {
+					transform: rotateX(0deg);
+				}
+			}
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: 350px;
+			opacity: 1;
+			@include transition(opacity);
+
+			@media (max-width: 1599px) {
+				height: 100%;
+			}
+		}
+
+		.touch {
+			position: absolute;
+			right: 5px;
+			bottom: 5px;
+			padding: 5px;
+			width: 40px;
+			height: 40px;
+			opacity: 0;
+			@include transition(opacity);
+			background-color: #FFFFFF;
+			border-radius: 50%;
+			box-shadow: inset 0 0 0 2px $pinky;
+		}
+	}
+
+	.button {
+		padding: 18px 0;
+		min-width: 235px;
+		font-size: 19px;
+		border-radius: 10px;
+		transition: 0.3s ease 0s background-color,
+			0.3s ease 0s border-color;
+
+		@include hover() {
+			border-color: $pinky;
+			background-color: $pinky;
+		}
+
+		&-wrapper {
+			margin-top: 70px;
+			text-align: center;
+
+			@include media-breakpoint-down(tablet) {
+				margin-top: 40px;
+			}
+		}
+	}
+}
